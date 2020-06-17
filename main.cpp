@@ -496,15 +496,18 @@ void keyboardfunc(unsigned char key, int x, int y) {
     switch (key)
     {
     case 'f': //score
+        if (choose == false) { break; }
         if (print_score == true) { print_score = false; }
         else { print_score = true; }
         break;
     case 'e': //exit procedure
+        if (choose == false) { break; }
         snake.set_last_level(snake.get_level());
         file.infile();
         exit(0);
     case 'r':  //restart
         //ми повинні повернути все значення в початковий стан
+        if (choose == false) { break; }
         choose = false;
         print_score = false;
         lose = false;
